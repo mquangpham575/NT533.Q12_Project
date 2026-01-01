@@ -1,0 +1,17 @@
+apiVersion: devices.kubeedge.io/v1alpha2
+kind: Device
+metadata:
+  name: light-01
+  labels:
+    description: "Virtual-Traffic-Light"
+    manufacturer: "KubeEdge-Demo"
+spec:
+  deviceModelRef:
+    name: traffic-light-model
+  nodeSelector:
+    nodeSelectorTerms:
+      - matchExpressions:
+          - key: ""
+            operator: In
+            values:
+              - ubuntu-2

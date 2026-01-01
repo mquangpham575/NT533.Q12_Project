@@ -1,0 +1,13 @@
+apiVersion: devices.kubeedge.io/v1alpha2
+kind: DeviceModel
+metadata:
+  name: traffic-light-model
+  namespace: default
+spec:
+  properties:
+    - name: color
+      description: "Màu đèn giao thông"
+      type:
+        string:
+          accessMode: ReadWrite
+          defaultValue: "RED"

@@ -1,0 +1,30 @@
+apiVersion: devices.kubeedge.io/v1alpha2
+kind: Device
+metadata:
+  name: counter
+  namespace: default
+spec:
+  deviceModelRef:
+    name: counter-model
+  nodeSelector:
+    nodeSelectorTerms:
+      - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+              - ubuntu-2
+  protocol:
+    common:
+      com:
+        baudRate: 9600
+status:
+  twins:
+    - propertyName: status
+      desired:
+        value: "OFF"
+        metadata:
+          type: string
+      reported:
+        value: "OFF"
+        metadata:
+          type: string

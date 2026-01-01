@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: counter-mapper-app
+  namespace: default
+  labels:
+    app: counter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: counter
+  template:
+    metadata:
+      labels:
+        app: counter
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: ubuntu-2
+      hostNetwork: true
+      containers:
+        - name: counter-mapper
+          image: kubeedge/kubeedge-pi-counter:v1.0.0
+          imagePullPolicy: IfNotPresent
+          command: ["/pi-counter-app"]
+          args: ["counter"]
