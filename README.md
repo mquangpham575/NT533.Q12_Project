@@ -1,15 +1,18 @@
 ## Edge Computing System with KubeEdge
 
 📌 Project Overview
+
 This project demonstrates the implementation of an Edge Computing infrastructure using KubeEdge, an open-source framework that extends Kubernetes orchestration to the edge. The system enables centralized container management from the Cloud to Edge devices while ensuring Edge Autonomy and seamless IoT device integration.
 
 🏗️ Architecture & Environment
+
 The deployment consists of two primary nodes communicating via WebSocket (Port 10000):
 
 - Master Node (Cloud): Ubuntu-1 (192.168.26.150) running Kubernetes API Server and KubeEdge CloudCore.
 - Edge Node (Device): Ubuntu-2 (192.168.26.151) running KubeEdge EdgeCore, Docker Engine, and Mosquitto MQTT Broker.
 
 🚀 Key Demos & Features
+
 We implemented four progressive laboratories to validate the system's capabilities:
 
 - Pod Deployment: Remote container orchestration from Cloud to Edge using nodeSelector.
